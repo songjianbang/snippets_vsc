@@ -15,4 +15,29 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
+
+	//lua
+	"Print trace": {
+		"scope": "lua",
+		"prefix": "sptrace",
+		"body": [
+			"print(debug.traceback())"
+		],
+		"description": "trace"
+	},
+
+	//cocos
+	"set layout color": {
+		"scope": "lua",
+		"prefix": "ssetcolor",
+		"body": [
+			"$1:setBackGroundColor(display.COLOR_GRAY)",
+			"$1:setBackGroundColorType(1)"
+		],
+		"description": "trace"
+	},
+
+
+	///////////////////////////////////////////////////////////////////////////////////////
+	// ema
 }
