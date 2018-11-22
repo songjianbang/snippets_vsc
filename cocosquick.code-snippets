@@ -48,6 +48,46 @@
 		"description": "trace"
 	},
 
+	"for": {
+		"scope": "lua",
+		"prefix": "sfor",
+		"body": [
+			"for i = 1, $0 do",
+			"end",
+		],
+		"description": "trace"
+	},
+
+	"fori": {
+		"scope": "lua",
+		"prefix": "sfori",
+		"body": [
+			"for i, v in ipairs($0) do",
+			"end",
+		],
+		"description": "trace"
+	},
+
+	"fort": {
+		"scope": "lua",
+		"prefix": "sfort",
+		"body": [
+			"for k, v in pairs($0) do",
+			"end",
+		],
+		"description": "trace"
+	},
+
+	"if": {
+		"scope": "lua",
+		"prefix": "sif",
+		"body": [
+			"if $0 then",
+			"end",
+		],
+		"description": "trace"
+	},
+
 	//cocos
 	"set layout color": {
 		"scope": "lua",
@@ -59,9 +99,32 @@
 		"description": "trace"
 	},
 
+	"button click": {
+		"scope": "lua",
+		"prefix": "sclick",
+		"body": [
+			"$1:addClickEventListener(function()",
+			"\t$0",
+			"end)",
+		],
+		"description": "trace"
+	},
+
+	
+
 
 	///////////////////////////////////////////////////////////////////////////////////////
 	// ema
+	
+	"send msg": {
+		"scope": "lua",
+		"prefix": "scall",
+		"body": [
+			"app:sendMsg(\"$1\", \"$0\")",
+		],
+		"description": "trace"
+	},
+
 	"create view file": {
 		"scope": "lua",
 		"prefix": "screateviewfile",
@@ -91,4 +154,18 @@
 		],
 		"description": "trace"
 	},
+
+	"req msg": {
+		"scope": "lua",
+		"prefix": "sreq",
+		"body": [
+			"function $TM_FILENAME_BASE:$1($0)",
+			"\tapp.session:request(\"pb_captainRoom.C2S_QueryCaptainRoomServerData\",{},function(msg)",
+			"\tend)",
+			"end",
+		],
+		"description": "trace"
+	},
+
+	
 }
