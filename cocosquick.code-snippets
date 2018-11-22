@@ -26,6 +26,28 @@
 		"description": "trace"
 	},
 
+	"local function": {
+		"scope": "lua",
+		"prefix": "slfun",
+		"body": [
+			"local function $1($2)",
+			"\t$0",
+			"end",
+		],
+		"description": "trace"
+	},
+
+	"member function": {
+		"scope": "lua",
+		"prefix": "smfun",
+		"body": [
+			"function $TM_FILENAME_BASE:$1()",
+			"\t$0",
+			"end"
+		],
+		"description": "trace"
+	},
+
 	//cocos
 	"set layout color": {
 		"scope": "lua",
@@ -40,4 +62,33 @@
 
 	///////////////////////////////////////////////////////////////////////////////////////
 	// ema
+	"create view file": {
+		"scope": "lua",
+		"prefix": "screateviewfile",
+		"body": [
+			"---",
+			"--类名: $TM_FILENAME_BASE.lua",
+			"--创建日期: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+			"--创建人: 宋建邦",
+			"--功能描述: view",
+			"--修改内容:",
+			"",
+			"local $TM_FILENAME_BASE = class(\"$TM_FILENAME_BASE\", app.mvc.ViewBase)",
+			"$TM_FILENAME_BASE.VIEW_ROOT_RES = Res.$0",
+			"",
+			"function $TM_FILENAME_BASE:init()",
+			"\tself:setBackGroundColorType(0)",
+			"\tself:setNodeEventEnabled(true)",
+			"end",
+			"",
+			"function $TM_FILENAME_BASE:onExit()",
+			"end",
+			"",
+			"function $TM_FILENAME_BASE:refresh(data)",
+			"end",
+			"",
+			"return $TM_FILENAME_BASE",
+		],
+		"description": "trace"
+	},
 }
